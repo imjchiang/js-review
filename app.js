@@ -102,3 +102,41 @@ headerTwo.classList.add("subtitle", "header-two");
 headerTwo.classList.remove("header-two")
 console.log(headerTwo);
 
+
+headerTwo.addEventListener("click", function()
+{
+    headerTwo.textContent = "Josh";
+});
+
+// make another element
+const headerThree = document.createElement("h2");
+headerThree.textContent = "Friends";
+
+container.appendChild(headerThree);
+
+console.log(headerThree);
+
+const list = document.createElement("ul");
+
+// iterate through my friends array
+for (let i = 0; i < friends.length; i++)
+{
+    let eachFriend = friends[i];
+
+    const listItem = document.createElement("li");
+    listItem.textContent = eachFriend;
+
+    list.appendChild(listItem);
+}
+
+console.log(list);
+
+headerThree.addEventListener("click", function()
+{
+    container.appendChild(list);
+});
+// reference each friend
+// create a li
+// add textContent to that li
+// append that to a ul (unordered list)
+
