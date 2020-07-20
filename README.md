@@ -45,3 +45,26 @@ This is my review of JavaScript.
         return num1 - num2;
     };
 ```
+
+
+## DOM Manipulation
+
+```javascript
+//DOM
+const container = document.querySelector(".container");
+console.log(container);
+
+// create an element
+const headerTwo = document.createElement("h2");
+headerTwo.textContent = "My First JS Review";
+
+container.appendChild(headerTwo);
+
+// add a class to headerTwo
+headerTwo.classList.add("subtitle", "header-two");
+//headerTwo.setAttribute("class", "header-two");
+
+// remove class from headerTwo
+headerTwo.classList.remove("header-two")
+console.log(headerTwo);
+```
