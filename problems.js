@@ -164,7 +164,19 @@ console.log([true, false, false, true]);
 // capitalized. Index 0 counts as even.
 function evenCaps(sentence)
 {
-
+    let evenSentence = "";
+    for (let i = 0; i < sentence.length; i++)
+    {
+        if (i % 2 === 0)
+        {
+            evenSentence += sentence[i].toUpperCase();
+        }
+        else
+        {
+            evenSentence += sentence[i];
+        }
+    }
+    return evenSentence;
 }
 
 //tests
