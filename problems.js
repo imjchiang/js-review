@@ -131,31 +131,45 @@ console.log(wordYeller("Go to the store and grab the following: milk, bread, run
 console.log("Go! to! the! store! and! grab! the! following: milk, bread, run, and! cake!");
 
 
-/*
-### arraySubstring
-```js
 // Write a function `arraySubstring(words, str)` that takes in an array of
 // strings and a string as arguments and returns an array where each element is
 // replaced with true if the string is a substring of the element and false if
 // it is not.
-//
-// Examples:
-//
-// arraySubstring(["hello", "history", "helix", "hellos"],"hel")
-// => [true, false, true, true]
-// arraySubstring(["prefix", "problems", "pragmatic", "prefer"], "pre")
-// => [true, false, false, true]
-```
-#### evenCaps
-```js
+function arraySubstring(words, str)
+{
+    let itsIn = [];
+    for (let i = 0; i < words.length; i++)
+    {
+        if (words[i].search(str) !== -1)
+        {
+            itsIn[i] = true;
+        }
+        else
+        {
+            itsIn[i] = false;
+        }
+    }
+    return itsIn;
+}
+
+//tests
+console.log(arraySubstring(["hello", "history", "helix", "hellos"],"hel"));
+console.log([true, false, true, true]);
+console.log(arraySubstring(["prefix", "problems", "pragmatic", "prefer"], "pre"));
+console.log([true, false, false, true]);
+
+
 // Write a function evenCaps(sentence) that takes in a sentence as an
 // argument and returns the same string with each even index being
 // capitalized. Index 0 counts as even.
-//
-// Examples:
-//
-// evenCaps("Tom got a small piece of pie")
-// => "ToM GoT A SmAlL PiEcE Of pIe"
-// evenCaps("the book is in front of the table")
-// => "ThE BoOk iS In fRoNt oF ThE TaBlE"
-*/
+function evenCaps(sentence)
+{
+
+}
+
+//tests
+console.log(evenCaps("Tom got a small piece of pie"));
+console.log("ToM GoT A SmAlL PiEcE Of pIe");
+console.log(evenCaps("the book is in front of the table"));
+console.log("ThE BoOk iS In fRoNt oF ThE TaBlE");
+
