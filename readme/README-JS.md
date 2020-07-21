@@ -1,5 +1,8 @@
 # JavaScript Review 
 This is my review of JavaScript.
+- Javascript: an object oriented programming lannguage
+- gives web pages interactive elements that engage a user 
+- allows for dynamic functionality
 
 ## Examples of Data Types
 ```javascript
@@ -25,6 +28,47 @@ This is my review of JavaScript.
             console.log("The CEO of Tesla is " + this.ceo);
         }
     }
+```
+
+## Examples of String Methods
+```javascript
+“strIng”.toUpperCase()
+```
+- makes all string upper case 
+    - returns ```“STRING”```
+
+```javascript
+“sTring”.toLowerCase()
+```
+- makes all string lower case
+    - returns ```“string”```
+
+```javascript
+“taylor”.indexOf(“y”)
+```
+- gives us index of char 
+    - returns ```2```
+
+```javascript
+“Taylor”.replace(“lor”, “Tay”)
+```
+- replaces first string with the second
+    - returns ```“TayTay”```
+
+
+## Examples of Array Methods
+```javascript
+var favs = “sushi,tacos,kale”;
+favs.split(“,”);				//splits into array with “,” as dividing point and removes the “,”
+var nums = [“zero”, “one”, “two”];
+nums.push(“three”);			    //pushes “three” as the next array element
+nums.pop();				        //removes the last element in the array
+nums.shift();				    //removes the first element in the array
+nums.unshift(“negative”);		//shifts array right and “negative” in index 0
+nums.sort();				    //sorts array alphabetically
+nums.concat([1, “31”]);		    //adds 1 and “31” to the end of array
+nums.splice(1, 3);			    //returns indices 1 and 2
+
 ```
 
 ## Examples of Functions
@@ -95,4 +139,95 @@ headerThree.addEventListener("click", function()
 {
     container.appendChild(list);
 });
+```
+
+## Examples of Iterators
+
+### ```.filter()```
+```javascript
+var misc = [3, "true", {a: 1, b: 2}, 7, [1, 2, 3], ['a', 'b', 'c'], "my favorite string", 59.09]
+let result = [];
+
+const allString = misc.filter(element => 
+{
+    if (typeof element === "string")
+    {
+        result.push(element);
+    }
+    else if (Array.isArray(element)) 
+    {
+        getArrayString(element);
+    }
+} );
+
+function getArrayString(array)
+{
+    for (let i = 0; i < array.length; i++)
+    {
+        if (typeof array[i] === "string")
+        {
+            result.push(array[i])
+        } 
+    }
+}
+```
+
+### ```.foreach()```
+```javascript
+var foods = 
+[
+  {name: "Pizza", level: "very"},
+  {name: "Tacos", level: "mostly"},
+  {name: "Cottage Cheese", level: "not very"}
+];
+
+foods.forEach(function(element){
+  console.log(element.name + " is " + element.level + " delicious");
+});
+```
+
+### ```.map()```
+```javascript
+var phoneBook = [
+   {Abe: "111-111-1111"},
+   {Bob: "222-222-2222"},
+   {Cam: "333-333-3333"},
+   {Dan: "444-444-4444"},
+   {Ern: "555-555-5555"},
+   {Fry: "111-111-1111"},
+   {Gil: "222-222-2222"},
+   {Hal: "333-333-3333"},
+   {Ike: "444-444-4444"},
+   {Jim: "555-555-5555"},
+   {Kip: "111-111-1111"},
+   {Liv: "222-222-2222"},
+   {Mia: "333-333-3333"},
+   {Nik: "444-444-4444"},
+   {Oli: "555-555-5555"},
+   {Pam: "111-111-1111"},
+   {Qiq: "222-222-2222"},
+   {Rob: "333-333-3333"},
+   {Stu: "444-444-4444"},
+   {Tad: "555-555-5555"},
+   {Uwe: "111-111-1111"},
+   {Val: "222-222-2222"},
+   {Wil: "333-333-3333"},
+   {Xiu: "444-444-4444"},
+   {Yam: "555-555-5555"},
+   {Zed: "111-111-1111"}
+  ];
+
+const countryCoded = phoneBook.map(element => {
+  let properties = Object.keys(element);
+  //let properties = Object.keys(element)[0];
+  let number = element[properties[0]];
+  //let number = element[properties];
+  let code = number[0];
+
+  let codedNum = code + "-" + number;
+
+  element[properties[0]] = codedNum;
+
+  return element;
+})
 ```
