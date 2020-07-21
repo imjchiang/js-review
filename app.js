@@ -140,3 +140,66 @@ headerThree.addEventListener("click", function()
 // add textContent to that li
 // append that to a ul (unordered list)
 
+
+// Problem Solving
+
+// what do I start with?
+// what do I hope to end up with
+
+// understand the problem
+// where the issue start and ...
+
+// break it down into more mangeable problems
+
+/*
+- [ ] Do I understand what the prompt is asking?
+- [ ] Am I able to break the problem down?
+- [ ] What is my strategy for solving the problem?
+- [ ] Do I understand what my code is doing?
+- [ ] Am I able to foresee any edge cases?
+- [ ] Am I able to track the order of the code that is being executed?
+- [ ] Am I able to track the values of the variables?
+- [ ] Am I able to walk through my code line by line with an example?
+- [ ] Do I have a working solution?
+*/
+
+
+//fizzBuzz
+//Write a function that does the following:
+    //takes in an array
+    //check each number in the array
+    //check if the number is divisible by 5 and 3 === FizzBuzz
+    //if the number is divisible by 3 === Fizz
+    //if the number is divisble by 5 === Buzz
+
+//For example:
+    //[3, 5, 15, 20, 9, 7]
+    //return ["Fizz", "Buzz", "FizzBuzz", "Buzz", "Fizz", 7]
+
+function fizzBuzz(array)
+{
+    let fbArray = [];
+
+    for (let i = 0; i < array.length; i++)
+    {
+        if (array[i] % 3 === 0 && array[i] % 5 === 0)
+        {
+            fbArray[i] = "FizzBuzz";
+        }
+        else if (array[i] % 3 === 0)
+        {
+            fbArray[i] = "Fizz";
+        }
+        else if (array[i] % 5 === 0)
+        {
+            fbArray[i] = "Buzz";
+        }
+        else
+        {
+            fbArray[i] = array[i];
+        }
+    }
+
+    return fbArray;
+}
+
