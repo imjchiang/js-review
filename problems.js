@@ -104,7 +104,6 @@ function wordYeller(sentence)
 {
     let coolerSentence = "";
     let sentenceArray = sentence.split(" ");
-    console.log(sentenceArray);
     const conditions = [".", ",", "!", "?", ";", ":"];
     for (let i = 0; i < sentenceArray.length; i++)
     {
@@ -119,23 +118,17 @@ function wordYeller(sentence)
             {
                 sentenceArray[i] += "! ";
             }
-            console.log(sentenceArray[i]);
         }
-        if (i = sentenceArray.length - 1)
-        {
-            sentenceArray[i] = sentenceArray[i].substring(0, sentenceArray[i].length - 1);
-        }
-        coolerSentence += sentenceArray[i];
-        console.log(coolerSentence);
+        coolerSentence = coolerSentence.concat(sentenceArray[i]);
     }
-    return coolerSentence;
+    return coolerSentence.substring(0, coolerSentence.length - 1);
 }
 
 //tests
 console.log(wordYeller("Stop it now! Please, wont you stop?"));
-//console.log("Stop! it! now! Please, wont! you! stop?");
-//console.log(wordYeller("Go to the store and grab the following: milk, bread, run, and cake"));
-//console.log("Go! to! the! store! and! grab! the! following: milk, bread, run, and! cake!");
+console.log("Stop! it! now! Please, wont! you! stop?");
+console.log(wordYeller("Go to the store and grab the following: milk, bread, run, and cake"));
+console.log("Go! to! the! store! and! grab! the! following: milk, bread, run, and! cake!");
 
 
 /*
