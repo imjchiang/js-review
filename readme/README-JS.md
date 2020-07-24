@@ -231,3 +231,47 @@ const countryCoded = phoneBook.map(element => {
   return element;
 })
 ```
+
+## HTML Forms Data Manipulation
+```javascript
+const resultsDiv = document.querySelector("#results");
+console.log(resultsDiv);
+
+new URLSearchParams(window.location.search).forEach((value, name) =>
+{
+    console.log(name);
+    console.log(value);
+
+    let resultElement = document.createElement("p");
+    resultElement.textContent = name + " " + value;
+    resultsDiv.appendChild(resultElement);
+});
+```
+
+
+
+
+
+## Fetch
+- take and manipulate data from other sources and sites
+```javascript
+fetch("https://pokeapi.co/api/v2/pokemon/lickitung")
+.then(response =>
+{
+    return response.json();
+})
+.then(data =>
+{
+    ...
+    ...
+    ...
+});
+.catch(error =>
+{
+    ...
+})
+```
+- ```fetch()``` takes the api of a specific site calls the site to access data
+- the first ```.then(response => ...)``` takes the data and returns it to the next ```.then()```
+- the next ```.then(data => ...)``` is the part where manipulation of the data taken from the api happens
+- ```.catch(error => ...)``` catches any possible errors and does something when an error is caught
