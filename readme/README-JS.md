@@ -313,5 +313,38 @@ aPotato.intro();
     - must use keyword ```new``` in creation of a new object through a constructor
 
 ## Class
+- type of function that uses class to initiate it
+- contains a constructor and functions that the object created through the class can use
+```javascript
+class Car
+{
+    constructor(year, make, model, color)
+    {
+        this.year = year;
+        this.make = make;
+        this.model = model;
+        this.color = color;
+    }
 
+    drive()
+    {
+        console.log("Vroom");
+    }
 
+    intro()
+    {
+        console.log("This car is a " + this.make + " " + this.model);
+    }
+}
+```
+- to use constructor properties or functions, use dot notation per usual
+
+```javascript
+let tesla = new Car(2020, "Tesla", "Model S", "red");
+console.log(tesla);
+tesla.drive();
+tesla.intro();
+```
+- created a new object of class Car through the constructor
+    - properties inside constructor
+- call functions of the new Car using dot notation
