@@ -54,6 +54,76 @@ This is my review of HTML.
 - ```<title>``` shows up on tabs and browser but not the actual page
 - this page would just say "HTML Boilerplate" on it.
 
+## Forms
+- Forms can be created through HTML to collect data
+    - Data can be manipulated through Javascript after collection through HTML
+
+```HTML
+<form action="results.html" method="GET" enctype="multipart/form-data">
+...
+</form>
+```
+- setting up the form
+- put inputs between the ```<form>``` tags
+
+```HTML
+<div>
+    <h2>Get Registered</h2>
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name">
+</div>
+```
+- example of a text based input
+- ```for``` attribute of ```<label>``` and ```id``` attribute of ```<input>``` help link the label with the input.
+- ```type``` attribute of input helps identify what kind of input is going to be taken
+
+```HTML
+<div>
+    <label for="email">Email: </label>
+    <input type="email" name="email" id="email" required>
+</div>
+```
+- another example of a text based input
+- this one requires input of email
+- by placing ```required``` at the end of the ```<input>```, it makes this section required to be filled out before submission of the form
+
+```HTML
+<div>
+    <label for="age">Age: </label>
+    <input type="number" name="age" id="age" min="1" max="120" required>
+</div>
+```
+- example of a number input
+- can set bounds of acceptable numbers by using ```min``` and ```max``` attributes
+
+```HTML
+<div>
+    <h2>Fav Foods</h2>
+    <label for="bananas">Bananas</label>
+    <input type="checkbox" name="bananas" id="bananas">
+
+    <label for="apples">Apples</label>
+    <input type="checkbox" name="apples" id="apples">
+</div>
+```
+- example of a checkbox input method
+- can add as many checkboxes as you want with different labels by using ```checkbox``` as the parameter for the ```type``` attribute
+
+```HTML
+<div>
+    <label for="file">File</label>
+    <input type="file" name="file" id="file">
+</div>
+```
+- an example of a file input
+
+```HTML
+<div>
+    <button type="submit">SUBMIT INFO</button>
+</div>
+```
+- this button allows for the submission of the different info filled out in the form
+
 ## Common Element Types
 #### Text Wrappers
 - ```<p>```
