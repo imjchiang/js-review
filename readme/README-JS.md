@@ -314,24 +314,8 @@ willIGetNewPhone.then(result =>
     console.log(result);
 });
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- does the resolve if the condition is met
+- does the reject if the condition is not met and an error needs to be returned.
 
 
 ## Async/Await
