@@ -252,6 +252,21 @@ new URLSearchParams(window.location.search).forEach((value, name) =>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Fetch
 - take and manipulate data from other sources and sites
 ```javascript
@@ -277,9 +292,73 @@ fetch("https://pokeapi.co/api/v2/pokemon/lickitung")
 - ```.catch(error => ...)``` catches any possible errors and does something when an error is caught
 
 ## Promises
+```javascript
+let willIGetNewPhone = new Promise(
+    function (resolve, reject) {
+        if (isMomHappy) {
+            var phone = {
+                brand: 'Samsung',
+                color: 'black'
+            };
+            resolve(phone); // fulfilled
+        } else {
+            let reason = new Error('mom is not happy');
+            reject(reason); // reject
+        }
+
+    }
+);
+
+willIGetNewPhone.then(result =>
+{
+    console.log(result);
+});
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Async/Await
+- allow for running of different lines of code asynchronistically
+- function must be an ```async``` function
+- if something is awaited, that has to be finished before the next line involving that line that has been awaited can run
+```javascript
+async function printUsers()                                         //need an async function to use await
+{
+    let joshEndpoint = "https://api.github.com/users/imjchiang";
+    let romeEndpoint = "https://api.github.com/users/romebell";
+    let imJosh = await fetch(joshEndpoint).then(response =>         //has await
+    {
+        return response.json()
+    });
+    let rome = fetch(romeEndpoint).then(response =>                 //does not have await
+    {
+        return response.json();
+    })
+    console.log(imJosh);    //waited until data grabbed
+    console.log(rome);      //did not wait until data grabbed
+}
+printUsers();
+```
+- ```async``` must be mentioned before ```function``` and function name
+- for fetch, line 346 shows an ```await```, which makes the ```console.log(imJosh)``` wait until the fetch is complete
+- for fetch, line 350 there is no ```await```, which makes the ```console.log(tome)``` undefined or full of errors as it is not waiting for the fetch to complete.
 
 
 ## Constructor Function
