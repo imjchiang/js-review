@@ -275,3 +275,43 @@ fetch("https://pokeapi.co/api/v2/pokemon/lickitung")
 - the first ```.then(response => ...)``` takes the data and returns it to the next ```.then()```
 - the next ```.then(data => ...)``` is the part where manipulation of the data taken from the api happens
 - ```.catch(error => ...)``` catches any possible errors and does something when an error is caught
+
+## Promises
+
+
+## Async/Await
+
+
+## Constructor Function
+- blueprint that allows for the creation of many objects of the same type
+
+```javascript
+function Potatoes(name, type, weight, edible)
+{
+    this.name = name;
+    this.type = type;
+    this.weight = weight;
+    this.edible = edible;
+    this.intro = function()
+    {
+        console.log("Hi, I am a " + this.type + ".");
+    }
+}
+```
+- function is capitalized
+- parameters of functions hold what the properties will equate to in the properties
+- this is a pointer that points to the object that owns this code
+    - ```this.___``` sets how we can access the property
+
+```javascript
+let aPotato = new Potatoes("Coolest Potato", "Sweet Potato", 5, true);
+console.log(aPotato);
+console.log(aPotato.edible);
+aPotato.intro();
+```
+- sets aPotato as a new Potatoes object, created by the constructor
+    - must use keyword ```new``` in creation of a new object through a constructor
+
+## Class
+
+
