@@ -247,24 +247,11 @@ new URLSearchParams(window.location.search).forEach((value, name) =>
     resultsDiv.appendChild(resultElement);
 });
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- gets the data from the form
+- searches through, gets the name of the things being recorded 
+    - what is it? (name, age, year, etc...)
+- gets value for each name
+    - Josh, 22, 2020, etc...
 
 
 ## Fetch
