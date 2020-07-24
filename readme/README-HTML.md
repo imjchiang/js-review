@@ -65,6 +65,24 @@ This is my review of HTML.
 ```
 - setting up the form
 - put inputs between the ```<form>``` tags
+- ```action``` attribute defines action to be performed after submission of form
+    - data is sent to ```results.html``` in this case
+        - in this case, ```results.html``` has a normal boilerplate scripted to ```results.js```
+        - can use to display data results
+        - can also use to direct back to original form
+            ```HTML
+            <a href="./index.html">Back to Form</a>
+            ```
+- ```get``` appends form data to URL
+    - good for non-secure data
+    - has a 2048 character limitation
+    - results can be bookmarked
+- ```post``` has no size limitations
+    - resultscannot be bookmarked
+    - good for sensitive or personal info
+- ```enctype``` specifies how the form-data should be encoded when submitting it
+    - no characters are encoded
+    - required when uploading files
 
 ```HTML
 <div>
